@@ -1,6 +1,8 @@
 package com.example.sprint2.Adaptadores;
 
 import android.content.Context;
+import android.content.Intent;
+import android.icu.text.IDNA;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sprint2.Entidades.Producto;
+import com.example.sprint2.Info;
 import com.example.sprint2.R;
 
 import java.util.ArrayList;
@@ -53,6 +56,19 @@ public class ProductoAdapter extends BaseAdapter {
         textNameProduct.setText(producto.getName());
         textDescriptionProduct.setText(producto.getDescription());
         textPriceProduct.setText(String.valueOf(producto.getPrice()));
+
+        imgProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context.getApplicationContext(), Info.class);
+                intent.putExtra("name", producto.getName());
+                intent.putExtra("description", producto.getDescription());
+                intent.putExtra("price", String.valueOf(producto.getPrice()));
+                intent.putExtra("image", producto.getImage());
+                context.startActivity(intent);
+            }
+        });
+
 
         return view;
     }

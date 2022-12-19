@@ -20,8 +20,8 @@ public class Productos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productos);
 
-       listViewProductos = (ListView) findViewById(R.id.listViewProductos);
-       arrayProductos = new ArrayList<>();
+        listViewProductos = (ListView) findViewById(R.id.listViewProductos);
+        arrayProductos = new ArrayList<>();
 
         Producto producto1 = new Producto("Producto1", "Descripcion1", 1000,R.drawable.dino);
         Producto producto2 = new Producto("Producto2", "Descripcion2", 2000,R.drawable.monster);
@@ -29,7 +29,12 @@ public class Productos extends AppCompatActivity {
         Producto producto4 = new Producto("Producto4", "Descripcion4", 4000,R.drawable.dino);
         Producto producto5 = new Producto("Producto5", "Descripcion5", 5000,R.drawable.monster);
         Producto producto6 = new Producto("Producto6", "Descripcion6", 6000,R.drawable.mushrooms);
-
+        arrayProductos.add(producto1);
+        arrayProductos.add(producto2);
+        arrayProductos.add(producto3);
+        arrayProductos.add(producto4);
+        arrayProductos.add(producto5);
+        arrayProductos.add(producto6);
 
        productoAdapter = new ProductoAdapter(this,arrayProductos);
        listViewProductos.setAdapter(productoAdapter);
