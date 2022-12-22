@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Info extends AppCompatActivity {
-    private TextView textNameInfo, textDescriptionInfo, textPriceInfo;
+    private TextView textNameInfo, textDescriptionInfo, textIdInfo, textPriceInfo;
     private ImageView imgInfo;
     private Button btnInfo;
 
@@ -19,11 +19,11 @@ public class Info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        textNameInfo = (TextView) findViewById(R.id.textNameInfo);
-        textDescriptionInfo = (TextView) findViewById(R.id.textDescriptionInfo);
-        textPriceInfo = (TextView) findViewById(R.id.textPriceInfo);
-        imgInfo = (ImageView) findViewById(R.id.imageInfo);
-        btnInfo = (Button) findViewById(R.id.btnInfo);
+        textNameInfo = findViewById(R.id.textNameInfo);
+        textDescriptionInfo = findViewById(R.id.textDescriptionInfo);
+        textPriceInfo = findViewById(R.id.textPriceInfo);
+        imgInfo = findViewById(R.id.imageInfo);
+        btnInfo = findViewById(R.id.btnInfo);
 
         Intent intentIN = getIntent();
         textNameInfo.setText(intentIN.getStringExtra("name"));

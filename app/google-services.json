@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "743212101226",
+    "project_id": "sprints-ciclo-4",
+    "storage_bucket": "sprints-ciclo-4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743212101226:android:4567b2fa792694a820e413",
+        "android_client_info": {
+          "package_name": "com.example.sprint2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743212101226-0ehn2bvseq70l3aq0n12a9eg7088q0q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh-Fyo8KxC9fzNSlvYY7Ridx3db0zsyP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743212101226-0ehn2bvseq70l3aq0n12a9eg7088q0q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

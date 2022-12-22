@@ -2,11 +2,16 @@ package com.example.sprint2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.example.sprint2.Adaptadores.ProductoAdapter;
+import com.example.sprint2.DB.DBfirebase;
+import com.example.sprint2.DB.DBhelper;
 import com.example.sprint2.Entidades.Producto;
+import com.example.sprint2.Service.ProductoService;
 
 import java.util.ArrayList;
 
@@ -14,29 +19,30 @@ public class Productos extends AppCompatActivity {
     private ListView listViewProductos;
     private ProductoAdapter productoAdapter;
     private ArrayList<Producto> arrayProductos;
+    private DBhelper dBhelper;
+    private ProductoService productoService;
+    private DBfirebase dBfirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productos);
-
-        listViewProductos = (ListView) findViewById(R.id.listViewProductos);
+        dBfirebase = new DBfirebase();
+        listViewProductos = findViewById(R.id.listViewProductos);
         arrayProductos = new ArrayList<>();
 
-        Producto producto1 = new Producto("Producto1", "Descripcion1", 1000,R.drawable.dino);
-        Producto producto2 = new Producto("Producto2", "Descripcion2", 2000,R.drawable.monster);
-        Producto producto3 = new Producto("Producto3", "Descripcion3", 3000,R.drawable.mushrooms);
-        Producto producto4 = new Producto("Producto4", "Descripcion4", 4000,R.drawable.dino);
-        Producto producto5 = new Producto("Producto5", "Descripcion5", 5000,R.drawable.monster);
-        Producto producto6 = new Producto("Producto6", "Descripcion6", 6000,R.drawable.mushrooms);
-        arrayProductos.add(producto1);
-        arrayProductos.add(producto2);
-        arrayProductos.add(producto3);
-        arrayProductos.add(producto4);
-        arrayProductos.add(producto5);
-        arrayProductos.add(producto6);
+        //dBfirebase.getData(productoAdapter);
+        try {
+            dBhelper = new DBhelper(this);
+            productoService = new ProductoService();
+            Cursor cursor = dBhelper.consultarDatos();
+            arrayProductos = productoService.cursorToArray(cursor);
+            productoAdapter = new ProductoAdapter(this,arrayProductos);
+            listViewProductos.setAdapter(productoAdapter);
+        } catch (Exception e) {
+            Log.e("database", e.toString());
+        }
 
-       productoAdapter = new ProductoAdapter(this,arrayProductos);
-       listViewProductos.setAdapter(productoAdapter);
+
     }
 }

@@ -2,7 +2,6 @@ package com.example.sprint2.Adaptadores;
 
 import android.content.Context;
 import android.content.Intent;
-import android.icu.text.IDNA;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +18,15 @@ import java.util.ArrayList;
 public class ProductoAdapter extends BaseAdapter {
     private Context context;
     private ArrayList <Producto> arrayProductos;
+
+
+    public ArrayList<Producto> getArrayProductos() {
+        return arrayProductos;
+    }
+
+    public void setArrayProductos(ArrayList<Producto> arrayProductos) {
+        this.arrayProductos = arrayProductos;
+    }
 
     public ProductoAdapter(Context context, ArrayList<Producto> arrayProductos) {
         this.context = context;
@@ -52,7 +60,7 @@ public class ProductoAdapter extends BaseAdapter {
         TextView textDescriptionProduct = (TextView) view.findViewById(R.id.textDescriptionProduct);
         TextView textPriceProduct = (TextView) view.findViewById(R.id.textPriceProduct);
 
-        imgProduct.setImageResource(producto.getImage());
+        imgProduct.setImageResource(R.drawable.dino);
         textNameProduct.setText(producto.getName());
         textDescriptionProduct.setText(producto.getDescription());
         textPriceProduct.setText(String.valueOf(producto.getPrice()));

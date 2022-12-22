@@ -8,5 +8,24 @@
     <string name="product_form_description">Descripcion</string>
     <string name="product_form_price">Precio</string>
     <string name="product_form_btn">REGISTRAR</string>
+    <string name="img_product">Imagen Productos</string>
+
+    //Agregar Producto
+
+    <string name="imgAddPrdructo">Img Agregar</string>
+    <string name="insAddProduct">Agregar Producto</string>
+    <string name="insDescripcionAddAroduct">Agregar Descripcion</string>
+    <string name="insPrecioAddProduct">Agregar Precio</string>
+    <string name="insCategoriaAddProduct">Agregar Categoria</string>
+    <string name="btnAddProduct">Agregar</string>
+
+    //Menu
+    <string name="favoritos">Favoritos</string>
+    <string name="compartir">Compartir</string>
+    <string name="mas">Mas</string>
+    <string name="agregarMenu">Agregar</string>
+    <string name="LoginMenu">Ingresar</string>
+    <string name="LogoutMenu">Salir</string>
+    <string name="geo">Localizacion</string>
 
 </resources>

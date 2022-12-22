@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itemFavoritos"
+        android:icon="@drawable/baseline_star"
+        android:title=""
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemCompartir"
+        android:icon="@drawable/baseline_share"
+        android:title=""
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemMas"
+        android:icon="@drawable/ibaseline_menu_open"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/geo"
+                android:icon="@drawable/baseline_map"
+                android:title="@string/geo"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/actionAdd"
+                android:icon="@drawable/baseline_add_circle"
+                android:title="@string/agregarMenu"
+                android:visible="true"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menuLogin"
+                android:icon="@drawable/baseline_login"
+                android:title="@string/LoginMenu" />
+            <item
+                android:id="@+id/exit"
+                android:icon="@drawable/baseline_logout"
+                android:title="@string/LogoutMenu"
+                android:visible="false"
+                app:showAsAction="ifRoom" />
+
+        </menu>
+    </item>
+</menu>
